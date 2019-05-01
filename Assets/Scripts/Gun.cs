@@ -8,6 +8,11 @@ public class Gun : MonoBehaviour
 
     public GameObject positivePolarityObject;
     public GameObject negativePolarityObject;
+
+    [SerializeField] private AudioClip leftMouseClick;
+    [SerializeField] private AudioClip rightMouseClick;
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -21,6 +26,7 @@ public class Gun : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.right, out hit))
              
             {
+                AudioManager.Instance.lmSFX(leftMouseClick); //when left mouse click occurs AudioManager script will make the audio source and play sound
                 Debug.DrawRay(transform.localPosition, transform.right, Color.green);
                 print("Found an object - distance: " + hit.distance);
                 if(hit.collider.gameObject.GetComponent<Polarity>()!=null)
@@ -45,6 +51,7 @@ public class Gun : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.right, out hit))
             {
+                AudioManager.Instance.lmSFX(rightMouseClick); //right mouse click plays audio clip
                 Debug.DrawRay(transform.position, transform.right, Color.green);
                 print("Found an object - distance: " + hit.distance);
                 if (hit.collider.gameObject.GetComponent<Polarity>() != null)

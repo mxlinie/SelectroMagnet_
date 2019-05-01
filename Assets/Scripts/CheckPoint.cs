@@ -8,6 +8,8 @@ public class CheckPoint : MonoBehaviour
     public GameObject lightOff;
     public Player player;
 
+    [SerializeField] private AudioClip passCheckpoint;
+
     void Start()
     {
         lightOn.SetActive(false);
@@ -18,6 +20,7 @@ public class CheckPoint : MonoBehaviour
     {
         lightOn.SetActive(true);
         lightOff.SetActive(false);
+        AudioManager.Instance.cSFX(passCheckpoint);
         Debug.Log("check");
     }
 

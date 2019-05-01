@@ -7,11 +7,14 @@ public class Trap : MonoBehaviour
     public int hitPlayerDamage = 1;
     public GameObject trapTrigger;
 
+    [SerializeField] private AudioClip hitPlayer;
+
     private void OnTriggerEnter(Collider hitInfo)
     {
         Player player = hitInfo.GetComponent<Player>();
         if (player != null)
         {
+            AudioManager.Instance.phSFX(hitPlayer); //when player enters the trigger zone sound clip plays
             player.PlayerTakeDamage(hitPlayerDamage);
         }
 
