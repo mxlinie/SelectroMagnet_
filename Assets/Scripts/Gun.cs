@@ -12,7 +12,6 @@ public class Gun : MonoBehaviour
     [SerializeField] private AudioClip leftMouseClick;
     [SerializeField] private AudioClip rightMouseClick;
 
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -35,7 +34,7 @@ public class Gun : MonoBehaviour
                     {
                         hit.collider.gameObject.GetComponent<Polarity>().SetPole(Pole.Positive);
                         positivePolarityObject = hit.collider.gameObject;
-                        MoveObjects();
+                        StartCoroutine(MoveObjects());
                     }
                     else
                     {
@@ -74,12 +73,15 @@ public class Gun : MonoBehaviour
        
     }
 
-    void MoveObjects()
+    IEnumerator MoveObjects()
     {
         if(positivePolarityObject != null && negativePolarityObject != null)
         {
             positivePolarityObject.transform.DOMove(negativePolarityObject.transform.position, 2).OnComplete(SetNull);
+            negativePolarityObject.transform.DOMove(positivePolarityObject.transform.position, 2).OnComplete(SetNull);
         }
+
+        yield return 0;
     }
 
     void SetNull()
