@@ -9,6 +9,7 @@ TagManager:
   - Positive
   - Negative
   - Trap
+  - Hazard
   layers:
   - Default
   - TransparentFX
