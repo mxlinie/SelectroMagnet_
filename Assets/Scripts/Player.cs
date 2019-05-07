@@ -112,15 +112,21 @@ public class Player : MonoBehaviour
         
         }
 
-    public void PlayerTakeDamage(int hitPlayerDamage)
+    public void PlayerTakeDamage(int hitPlayerDamage) //when a player collides with a trap
     {
-        health -= hitPlayerDamage;
+        health -= hitPlayerDamage; //minus health
         GameManager.Instance.HealthScore(hitPlayerDamage); //Call HealthScore function in GameManager 
         if (health <= 0)
         {
             PlayerDie();
         }
 
+    }
+
+    public void PlayerHealthGrab(int playerHealthHit) //When a player collides with a health pack
+    {
+        health += playerHealthHit; //plus health
+        GameManager.Instance.HealthScorePack(playerHealthHit); //Call HealthScore function in GameManager 
     }
 
     void PlayerDie()

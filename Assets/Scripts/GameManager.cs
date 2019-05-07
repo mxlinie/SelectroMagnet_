@@ -16,9 +16,15 @@ public class GameManager : Singleton<GameManager>
         health = 3;
     }
 
-    public void HealthScore(int newHealth)
+    public void HealthScore(int newHealth) //health trap hit
     {
         health -= newHealth;
+        UIManager.Instance.UpdateHealth();
+    }
+
+    public void HealthScorePack(int newHealth) //health pack pickup
+    {
+        health += newHealth;
         UIManager.Instance.UpdateHealth();
     }
 

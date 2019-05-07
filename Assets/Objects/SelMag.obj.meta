@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 28b039bcf3e52494bb270782121fb6cb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: grip_grip_GRP_selectroMagnet_low_poly
+    100002: selectroMagnet_low_poly_back_back_GRP
+    100004: selectroMagnet_low_poly_body_body_GRP
+    100006: selectroMagnet_low_poly_coil_GRP_coil_GRP
+    100008: selectroMagnet_low_poly_coilCharge_1_coilCharge_1_GRP
+    100010: selectroMagnet_low_poly_coilCharge_2_coilCharge_2_GRP
+    100012: selectroMagnet_low_poly_magnet_magnet_GRP
+    100014: selectroMagnet_low_poly_ray_ray_GRP
+    100016: selectroMagnet_low_poly_trigger_trigger_GRP
+    100018: selectroMagnet_low_poly_tube_tube_GRP
+    100020: selectroMagnet_low_poly_wire_wire_GRP
+    100022: //RootNode
+    400000: grip_grip_GRP_selectroMagnet_low_poly
+    400002: selectroMagnet_low_poly_back_back_GRP
+    400004: selectroMagnet_low_poly_body_body_GRP
+    400006: selectroMagnet_low_poly_coil_GRP_coil_GRP
+    400008: selectroMagnet_low_poly_coilCharge_1_coilCharge_1_GRP
+    400010: selectroMagnet_low_poly_coilCharge_2_coilCharge_2_GRP
+    400012: selectroMagnet_low_poly_magnet_magnet_GRP
+    400014: selectroMagnet_low_poly_ray_ray_GRP
+    400016: selectroMagnet_low_poly_trigger_trigger_GRP
+    400018: selectroMagnet_low_poly_tube_tube_GRP
+    400020: selectroMagnet_low_poly_wire_wire_GRP
+    400022: //RootNode
+    2100000: grip_grip_GRP_selectroMagnet_low_polyMat
+    2100002: selectroMagnet_low_poly_back_back_GRPMat
+    2100004: selectroMagnet_low_poly_body_body_GRPMat
+    2100006: selectroMagnet_low_poly_coil_GRP_coil_GRPMat
+    2100008: selectroMagnet_low_poly_coilCharge_1_coilCharge_1_GRPMat
+    2100010: selectroMagnet_low_poly_coilCharge_2_coilCharge_2_GRPMat
+    2100012: selectroMagnet_low_poly_magnet_magnet_GRPMat
+    2100014: selectroMagnet_low_poly_ray_ray_GRPMat
+    2100016: selectroMagnet_low_poly_trigger_trigger_GRPMat
+    2100018: selectroMagnet_low_poly_tube_tube_GRPMat
+    2100020: selectroMagnet_low_poly_wire_wire_GRPMat
+    2300000: grip_grip_GRP_selectroMagnet_low_poly
+    2300002: selectroMagnet_low_poly_back_back_GRP
+    2300004: selectroMagnet_low_poly_body_body_GRP
+    2300006: selectroMagnet_low_poly_coil_GRP_coil_GRP
+    2300008: selectroMagnet_low_poly_coilCharge_1_coilCharge_1_GRP
+    2300010: selectroMagnet_low_poly_coilCharge_2_coilCharge_2_GRP
+    2300012: selectroMagnet_low_poly_magnet_magnet_GRP
+    2300014: selectroMagnet_low_poly_ray_ray_GRP
+    2300016: selectroMagnet_low_poly_trigger_trigger_GRP
+    2300018: selectroMagnet_low_poly_tube_tube_GRP
+    2300020: selectroMagnet_low_poly_wire_wire_GRP
+    3300000: grip_grip_GRP_selectroMagnet_low_poly
+    3300002: selectroMagnet_low_poly_back_back_GRP
+    3300004: selectroMagnet_low_poly_body_body_GRP
+    3300006: selectroMagnet_low_poly_coil_GRP_coil_GRP
+    3300008: selectroMagnet_low_poly_coilCharge_1_coilCharge_1_GRP
+    3300010: selectroMagnet_low_poly_coilCharge_2_coilCharge_2_GRP
+    3300012: selectroMagnet_low_poly_magnet_magnet_GRP
+    3300014: selectroMagnet_low_poly_ray_ray_GRP
+    3300016: selectroMagnet_low_poly_trigger_trigger_GRP
+    3300018: selectroMagnet_low_poly_tube_tube_GRP
+    3300020: selectroMagnet_low_poly_wire_wire_GRP
+    4300000: grip_grip_GRP_selectroMagnet_low_poly
+    4300002: selectroMagnet_low_poly_back_back_GRP
+    4300004: selectroMagnet_low_poly_body_body_GRP
+    4300006: selectroMagnet_low_poly_coil_GRP_coil_GRP
+    4300008: selectroMagnet_low_poly_coilCharge_1_coilCharge_1_GRP
+    4300010: selectroMagnet_low_poly_coilCharge_2_coilCharge_2_GRP
+    4300012: selectroMagnet_low_poly_magnet_magnet_GRP
+    4300014: selectroMagnet_low_poly_ray_ray_GRP
+    4300016: selectroMagnet_low_poly_trigger_trigger_GRP
+    4300018: selectroMagnet_low_poly_tube_tube_GRP
+    4300020: selectroMagnet_low_poly_wire_wire_GRP
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

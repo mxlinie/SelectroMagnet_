@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource rightMouse;
     private AudioSource checkpointHit;
     private AudioSource playerHit;
+    private AudioSource playerHealth;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class AudioManager : MonoBehaviour
         rightMouse = this.gameObject.AddComponent<AudioSource>();
         checkpointHit = this.gameObject.AddComponent<AudioSource>();
         playerHit = this.gameObject.AddComponent<AudioSource>();
+        playerHealth = this.gameObject.AddComponent<AudioSource>();
     }
 
     public void lmSFX(AudioClip clip) //left mouse click
@@ -49,13 +51,18 @@ public class AudioManager : MonoBehaviour
         rightMouse.PlayOneShot(clip);
     }
 
-    public void cSFX(AudioClip clip) //checkpoint 
+    public void cSFX(AudioClip clip) //checkpoint passed
     {
         checkpointHit.PlayOneShot(clip);
     }
 
-    public void phSFX(AudioClip clip) //player hit
+    public void phSFX(AudioClip clip) //player hit by trap
     {
         playerHit.PlayOneShot(clip);
+    }
+
+    public void phthSFX(AudioClip clip) //player hit
+    {
+        playerHealth.PlayOneShot(clip);
     }
 }
