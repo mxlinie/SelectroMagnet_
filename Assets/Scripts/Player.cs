@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    #region Variables
     private Rigidbody myRigidbody;
 
     public int health = 3;
@@ -17,15 +18,17 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 10f;
 
     private float maxSpeed;
-       
 
     private Rigidbody rb;
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>(); // stating rigibody
     }
 
+    #region Movement
     private void HandleMovement(float horizontal) //All horizontal movement through vector 2
     {
         myRigidbody.velocity = new Vector2(horizontal * maxSpeed, myRigidbody.velocity.y);
@@ -111,7 +114,9 @@ public class Player : MonoBehaviour
             maxSpeed = 10f;
         
         }
+    #endregion
 
+    #region PlayerTakeDamage
     public void PlayerTakeDamage(int hitPlayerDamage) //when a player collides with a trap
     {
         health -= hitPlayerDamage; //minus health
@@ -122,19 +127,24 @@ public class Player : MonoBehaviour
         }
 
     }
+    #endregion
 
+    #region PlayerHealthGrab
     public void PlayerHealthGrab(int playerHealthHit) //When a player collides with a health pack
     {
         health += playerHealthHit; //plus health
         GameManager.Instance.HealthScorePack(playerHealthHit); //Call HealthScore function in GameManager 
     }
+    #endregion
 
+    #region Death
     void PlayerDie()
     {
         losePanel.SetActive(true);
         Destroy(gameObject);
         GameManager.Instance.health = 3;
     }
+    #endregion
 
     /*void ControlMovement()
     {

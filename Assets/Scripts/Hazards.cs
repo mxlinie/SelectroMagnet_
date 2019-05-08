@@ -25,10 +25,22 @@ public class Hazards : MonoBehaviour
     */
 
     public Rigidbody FallingObject;
-    public void OnTriggerEnter(Collider other)
+    //public int hitPlayerDamage = 1;
+
+    //[SerializeField] private AudioClip hitPlayer;
+
+    public void OnTriggerEnter(Collider collider)
     {
         if (FallingObject.isKinematic)
             FallingObject.isKinematic = false;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            Debug.Log("Got you!");
+        }
     }
 
 }
