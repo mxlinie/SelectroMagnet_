@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
 
     [SerializeField] private AudioClip leftMouseClick;
     [SerializeField] private AudioClip rightMouseClick;
+    [SerializeField] private AudioClip magnetSuccess;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -77,8 +78,9 @@ public class Gun : MonoBehaviour
     {
         if(positivePolarityObject != null && negativePolarityObject != null)
         {
+            AudioManager.Instance.msSFX(magnetSuccess);
             positivePolarityObject.transform.DOMove(negativePolarityObject.transform.position, 2).OnComplete(SetNull);
-            negativePolarityObject.transform.DOMove(positivePolarityObject.transform.position, 2).OnComplete(SetNull);
+            //negativePolarityObject.transform.DOMove(positivePolarityObject.transform.position, 2).OnComplete(SetNull);
         }
 
         yield return 0;

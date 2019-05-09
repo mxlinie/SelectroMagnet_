@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource playerHit;
     private AudioSource playerHealth;
     private AudioSource itemPick;
+    private AudioSource magnetSuccess;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class AudioManager : MonoBehaviour
         playerHit = this.gameObject.AddComponent<AudioSource>();
         playerHealth = this.gameObject.AddComponent<AudioSource>();
         itemPick = this.gameObject.AddComponent<AudioSource>();
+        magnetSuccess = this.gameObject.AddComponent<AudioSource>();
     }
 
     public void lmSFX(AudioClip clip) //left mouse click
@@ -71,5 +73,10 @@ public class AudioManager : MonoBehaviour
     public void ipSFX(AudioClip clip) //Item pick up
     {
         playerHealth.PlayOneShot(clip);
+    }
+
+    public void msSFX(AudioClip clip)
+    {
+        magnetSuccess.PlayOneShot(clip);
     }
 }

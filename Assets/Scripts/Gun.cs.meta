@@ -3,7 +3,11 @@ guid: 4ac7f119577b55046895041ff0e685e1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - positivePolarityObject: {instanceID: 0}
+  - negativePolarityObject: {instanceID: 0}
+  - leftMouseClick: {instanceID: 0}
+  - rightMouseClick: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

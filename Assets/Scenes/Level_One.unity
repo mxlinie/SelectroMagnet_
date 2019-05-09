@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7234,6 +7234,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2feb89502ae878e459336c009685d0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &804539428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804539425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac7f119577b55046895041ff0e685e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positivePolarityObject: {fileID: 0}
+  negativePolarityObject: {fileID: 0}
+  leftMouseClick: {fileID: 8300000, guid: eeb0fe1e5da36624c97e08b63461bd34, type: 3}
+  rightMouseClick: {fileID: 8300000, guid: eeb0fe1e5da36624c97e08b63461bd34, type: 3}
+  magnetSuccess: {fileID: 8300000, guid: c4a7b2a462335c1458fe588dd006e2b0, type: 3}
 --- !u!1 &810823611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5972104923189870316, guid: ada3b12ebcf1e1447aecb9409122fd9b,
