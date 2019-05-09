@@ -18182,8 +18182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8988b889c9c5f344799cd57be13b03e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  UIObjectText: {fileID: 0}
+  healthText: {fileID: 1277149158}
+  UIObjectText: {fileID: 1701973903}
   pausePanel: {fileID: 1663314927}
 --- !u!224 &2030191692
 RectTransform:
