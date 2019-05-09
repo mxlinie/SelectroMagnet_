@@ -6,12 +6,15 @@ public class Watch : MonoBehaviour
 {
     public string message;
 
+    [SerializeField] private AudioClip objectPickUp;
+
     void OnTriggerStay(Collider other)
     {
         UIManager.Instance.ToggleText(message); //Message set in the inspector
         if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E)) //if player is near watch object can be picked up by player 
         {
             Destroy(gameObject);
+            AudioManager.Instance.ipSFX(objectPickUp); //when player hits Watch and presses E, Audio Plays
             Debug.Log(name);
             PickUp();
         }
