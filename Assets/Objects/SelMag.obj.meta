@@ -38,6 +38,7 @@ ModelImporter:
     2100016: selectroMagnet_low_poly_trigger_trigger_GRPMat
     2100018: selectroMagnet_low_poly_tube_tube_GRPMat
     2100020: selectroMagnet_low_poly_wire_wire_GRPMat
+    2100022: initialShadingGroup
     2300000: grip_grip_GRP_selectroMagnet_low_poly
     2300002: selectroMagnet_low_poly_back_back_GRP
     2300004: selectroMagnet_low_poly_body_body_GRP
