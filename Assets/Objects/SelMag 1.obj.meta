@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 28b039bcf3e52494bb270782121fb6cb
+guid: 434c2c5da991fdb4db8845398ac7a4fd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -27,18 +27,7 @@ ModelImporter:
     400018: selectroMagnet_low_poly_tube_tube_GRP
     400020: selectroMagnet_low_poly_wire_wire_GRP
     400022: //RootNode
-    2100000: grip_grip_GRP_selectroMagnet_low_polyMat
-    2100002: selectroMagnet_low_poly_back_back_GRPMat
-    2100004: selectroMagnet_low_poly_body_body_GRPMat
-    2100006: selectroMagnet_low_poly_coil_GRP_coil_GRPMat
-    2100008: selectroMagnet_low_poly_coilCharge_1_coilCharge_1_GRPMat
-    2100010: selectroMagnet_low_poly_coilCharge_2_coilCharge_2_GRPMat
-    2100012: selectroMagnet_low_poly_magnet_magnet_GRPMat
-    2100014: selectroMagnet_low_poly_ray_ray_GRPMat
-    2100016: selectroMagnet_low_poly_trigger_trigger_GRPMat
-    2100018: selectroMagnet_low_poly_tube_tube_GRPMat
-    2100020: selectroMagnet_low_poly_wire_wire_GRPMat
-    2100022: initialShadingGroup
+    2100000: initialShadingGroup
     2300000: grip_grip_GRP_selectroMagnet_low_poly
     2300002: selectroMagnet_low_poly_back_back_GRP
     2300004: selectroMagnet_low_poly_body_body_GRP
