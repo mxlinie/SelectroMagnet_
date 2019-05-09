@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MoveGun : MonoBehaviour
 {
-
-    // Update is called once per frame
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -15,8 +13,9 @@ public class MoveGun : MonoBehaviour
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 
-        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        float angleY = Mathf.Clamp(mousePos.y, -60, 60);
+        float angleX = Mathf.Clamp(mousePos.x, -180, 0);
+        transform.rotation = Quaternion.Euler(new Vector3(0, angleX, angleY));
     }
 
 }
