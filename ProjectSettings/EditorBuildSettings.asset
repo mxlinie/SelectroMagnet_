@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SelectroMagnet_Build_Scene.unity
     guid: 6024815b47f57c443827002c22b5747e
+  - enabled: 1
+    path: Assets/Scenes/Level_One.unity
+    guid: bb8f7c85c5908c244a991291e992d047
   m_configObjects: {}
