@@ -78,9 +78,10 @@ public class Gun : MonoBehaviour
     {
         if(positivePolarityObject != null && negativePolarityObject != null)
         {
-            AudioManager.Instance.msSFX(magnetSuccess);
+            
             positivePolarityObject.transform.DOMove(negativePolarityObject.transform.position, 2).OnComplete(SetNull);
             //negativePolarityObject.transform.DOMove(positivePolarityObject.transform.position, 2).OnComplete(SetNull);
+        AudioManager.Instance.msSFX(magnetSuccess);
         }
 
         yield return 0;

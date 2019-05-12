@@ -15,7 +15,7 @@ public class MoveGun : MonoBehaviour
 
         float angleY = Mathf.Clamp(mousePos.y, -60, 60);
         float angleX = Mathf.Clamp(mousePos.x, -180, 0);
-        transform.rotation = Quaternion.Euler(new Vector3(0, angleX, angleY));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleY));
     }
 
 }
