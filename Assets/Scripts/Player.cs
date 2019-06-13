@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     #region Variables
     private Rigidbody myRigidbody;
 
-    public int health = 3;
+    //public int health = 3;
 
     public GameObject losePanel;
 
@@ -20,6 +21,14 @@ public class Player : MonoBehaviour
     private float maxSpeed;
 
     private Rigidbody rb;
+
+    // Heart Health System
+    public int numOfHearts;
+    public int health;
+
+    public Image[] hearts;
+    public Sprite filledHeart;
+    public Sprite emptyHeart;
     #endregion
 
     // Start is called before the first frame update
@@ -101,6 +110,8 @@ public class Player : MonoBehaviour
                 MaxSpeed();
             }
         }
+
+        HeartSystem(); //Running HeartSystem Function
                
         //float moveHorizontal = Input.GetAxis("Horizontal");
         ////float moveVertical = Input.GetAxis("Vertical");
@@ -158,4 +169,35 @@ public class Player : MonoBehaviour
 
         transform.Translate(movement * maxSpeed * Time.deltaTime, Space.World);
     }*/
+
+    public void HeartSystem()
+    {
+        if (health > numOfHearts)
+        {
+            health = numOfHearts;
+        }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < health)
+            {
+                hearts[i].sprite = filledHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            if (i < numOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+
+    }
+
 }
