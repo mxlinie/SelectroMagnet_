@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14611,16 +14611,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9215048836730298134, guid: 38c0e3098ad6c0641adbbc0f2c57eb6c,
-        type: 3}
-      propertyPath: speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215048836730298134, guid: 38c0e3098ad6c0641adbbc0f2c57eb6c,
-        type: 3}
-      propertyPath: losePanel
-      value: 
-      objectReference: {fileID: 1999877500}
     - target: {fileID: 9215048836730298132, guid: 38c0e3098ad6c0641adbbc0f2c57eb6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14676,6 +14666,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9215048836730298134, guid: 38c0e3098ad6c0641adbbc0f2c57eb6c,
+        type: 3}
+      propertyPath: speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215048836730298134, guid: 38c0e3098ad6c0641adbbc0f2c57eb6c,
+        type: 3}
+      propertyPath: losePanel
+      value: 
+      objectReference: {fileID: 1999877500}
     - target: {fileID: 9215048835823727457, guid: 38c0e3098ad6c0641adbbc0f2c57eb6c,
         type: 3}
       propertyPath: m_IsActive
@@ -15395,6 +15395,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2feb89502ae878e459336c009685d0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sgun: {fileID: 804539425}
+  FacingRight: 1
+  Horizontal: 0
+  MS: 7
   speed: 100
 --- !u!135 &1632475510
 SphereCollider:
