@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Hazards : MonoBehaviour
 {
+    //public int vinePlayerDamage = 1;
+    //public GameObject Vine;
     /*
     public Transform player; //This creates a slot in the inspector where you can add your player
     public float maxDistance = 5f; //This can be changed in the inspector to your liking
@@ -35,12 +37,18 @@ public class Hazards : MonoBehaviour
             FallingObject.isKinematic = false;
     }
 
-    void OnCollisionEnter(Collision collision)
+   /*[SerializeField] private AudioClip hitPlayer;
+
+    private void OnTriggerEnter(Collider hitInfo)
     {
-        if (collision.gameObject.name.Equals("Player"))
+        Player player = hitInfo.GetComponent<Player>();
+        if (player != null)
         {
-            Debug.Log("Got you!");
+            AudioManager.Instance.phSFX(hitPlayer); //when player enters the trigger zone sound clip plays
+            player.PlayerTakeDamage(vinePlayerDamage);
+            Destroy(Vine);
         }
-    }
+
+    }*/
 
 }

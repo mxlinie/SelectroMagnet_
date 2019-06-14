@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     #region Variables
     private Rigidbody myRigidbody;
 
+    public GameObject player; //Set up for player setActive to become false instead of destroying the object
+
     //public int health = 3;
 
     public GameObject losePanel;
@@ -16,7 +18,7 @@ public class Player : MonoBehaviour
 
     public float speed = 100f;
 
-    private float jumpSpeed = 10f;
+    private float jumpSpeed = 110f;
 
     private float maxSpeed;
 
@@ -84,7 +86,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(Vector3.up * jumpSpeed * Time.deltaTime, Space.World);
+            myRigidbody.AddForce(Vector3.up * jumpSpeed);
+            //transform.Translate(Vector3.up * jumpSpeed * Time.deltaTime, Space.World);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -152,7 +155,8 @@ public class Player : MonoBehaviour
     void PlayerDie()
     {
         losePanel.SetActive(true);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        player.SetActive(false); //Camera error Code doesn't appear anymore
         GameManager.Instance.health = 3;
     }
     #endregion
