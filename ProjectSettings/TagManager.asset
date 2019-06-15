@@ -10,6 +10,7 @@ TagManager:
   - Negative
   - Trap
   - Hazard
+  - Vines
   layers:
   - Default
   - TransparentFX

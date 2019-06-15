@@ -18,9 +18,13 @@ public class Player : MonoBehaviour
 
     public float speed = 100f;
 
-    private float jumpSpeed = 110f;
+    private float jumpSpeed = 70f;
+
+    private float hitSpeed = 20f;
 
     private float maxSpeed;
+
+    //public int vineDamage = 1; //Just for vines the player bounces off
 
     private Rigidbody rb;
 
@@ -202,6 +206,17 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Vines")
+        {
+            //Debug.Log("hit");
+            myRigidbody.AddForce(Vector3.up * hitSpeed);
+            //health -= vineDamage;
+            //PlayerTakeDamage(vineDamage);
+        }
     }
 
 }
