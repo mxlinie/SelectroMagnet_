@@ -18,7 +18,8 @@ public class Player : MonoBehaviour
 
     public float speed = 100f;
 
-    private float jumpSpeed = 70f;
+    [SerializeField]
+    private float jumpSpeed = 250f;
 
     private float hitSpeed = 20f;
 
@@ -27,6 +28,21 @@ public class Player : MonoBehaviour
     //public int vineDamage = 1; //Just for vines the player bounces off
 
     private Rigidbody rb;
+
+    //Handling jump movements
+    private bool jump;
+
+    [SerializeField]
+    private Transform[] groundPoints;
+
+    [SerializeField]
+    private float groundRadius;
+
+    [SerializeField]
+    private LayerMask whatIsGround; //Adding tags for what is ground
+
+    [SerializeField]
+    private bool isGrounded; //Checking if the player is in the air
 
     // Heart Health System
     public int numOfHearts;
@@ -56,6 +72,19 @@ public class Player : MonoBehaviour
             Flip(false); //Player remains in same position
         }
 
+        if (jump && isGrounded)
+        {
+            //isGrounded = false;
+            myRigidbody.AddForce(new Vector2(0, jumpSpeed));
+            jump = false; // stops player from jumping repeatively
+        }
+
+        else//(!jump && !isGrounded)
+        {
+            //jump = true;
+            isGrounded = true;
+            myRigidbody.AddForce(new Vector2(0, jumpSpeed * 0));
+        }
     }
 
     private void Flip(bool facingRight)
@@ -78,7 +107,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void FixedUpdate()
     {
-
+        HandleInput(); //Holds Space bar jumping
+        isGrounded = IsGrounded();
         float horizontal = Input.GetAxis("Horizontal"); // horizontal movement no stated so HandleMovement will function
         HandleMovement(horizontal); //Calling function
         //ControlMovement();
@@ -88,11 +118,11 @@ public class Player : MonoBehaviour
         //if (movement != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement.normalized), 0.2f);\
 
 
-        if (Input.GetKey(KeyCode.Space))
+        /*if (Input.GetKey(KeyCode.Space))
         {
             myRigidbody.AddForce(Vector3.up * jumpSpeed);
             //transform.Translate(Vector3.up * jumpSpeed * Time.deltaTime, Space.World);
-        }
+        }*/
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -206,6 +236,42 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+
+    private void HandleInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jump = true;
+            //Debug.Log("Key Hit");
+        }
+
+    }
+
+    private void ResetValues()
+    {
+        jump = false; //Reset jump while in the action
+    }
+
+    private bool IsGrounded()
+    {
+        if (myRigidbody.velocity.y <= 0)
+        {
+            foreach (Transform point in groundPoints)
+            {
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRadius, whatIsGround);
+
+                for (int i = 0; i < colliders.Length; i++)
+                {
+                    if (colliders[i].gameObject != gameObject)
+                    {
+                        Debug.Log(colliders[i].gameObject.name);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     void OnTriggerEnter(Collider other)
