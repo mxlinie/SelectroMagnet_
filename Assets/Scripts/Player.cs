@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     public GameObject player; //Set up for player setActive to become false instead of destroying the object
 
+    public GroundDetection groundedScript;
+    public GameObject feet;
     //public int health = 3;
 
     public GameObject losePanel;
@@ -25,7 +27,7 @@ public class Player : MonoBehaviour
 
     private float maxSpeed;
 
-    //public int vineDamage = 1; //Just for vines the player bounces off
+    public int vineDamage = 1; //Just for vines the player bounces off
 
     private Rigidbody rb;
 
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>(); // stating rigibody
+        groundedScript = feet.GetComponent<GroundDetection>();
     }
 
     #region Movement
@@ -107,8 +110,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void FixedUpdate()
     {
+        isGrounded = groundedScript.grounded;
+
         HandleInput(); //Holds Space bar jumping
-        isGrounded = IsGrounded();
+        //isGrounded = IsGrounded();
         float horizontal = Input.GetAxis("Horizontal"); // horizontal movement no stated so HandleMovement will function
         HandleMovement(horizontal); //Calling function
         //ControlMovement();
@@ -245,7 +250,6 @@ public class Player : MonoBehaviour
             jump = true;
             //Debug.Log("Key Hit");
         }
-
     }
 
     private void ResetValues()
@@ -253,7 +257,7 @@ public class Player : MonoBehaviour
         jump = false; //Reset jump while in the action
     }
 
-    private bool IsGrounded()
+    /*private bool IsGrounded()
     {
         if (myRigidbody.velocity.y <= 0)
         {
@@ -263,25 +267,28 @@ public class Player : MonoBehaviour
 
                 for (int i = 0; i < colliders.Length; i++)
                 {
+                    print("Weh");
                     if (colliders[i].gameObject != gameObject)
                     {
                         Debug.Log(colliders[i].gameObject.name);
+                        print("double weh");
                         return true;
                     }
                 }
             }
         }
         return false;
-    }
+    }*/
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Vines")
         {
             //Debug.Log("hit");
+            print("ouchie");
             myRigidbody.AddForce(Vector3.up * hitSpeed);
-            //health -= vineDamage;
-            //PlayerTakeDamage(vineDamage);
+           
+            PlayerTakeDamage(vineDamage);
         }
     }
 

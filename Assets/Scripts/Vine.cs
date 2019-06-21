@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Vine : MonoBehaviour
 {
+
     public int vinePlayerDamage = 1;
     public GameObject vine;
     //[SerializeField] private AudioClip hitPlayer;
