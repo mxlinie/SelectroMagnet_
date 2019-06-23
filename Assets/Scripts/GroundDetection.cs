@@ -10,7 +10,6 @@ public class GroundDetection : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        print("weh");
         if (other.gameObject.tag == "Ground")
         {
             grounded = true;

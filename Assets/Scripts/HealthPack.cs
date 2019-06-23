@@ -8,6 +8,8 @@ public class HealthPack : MonoBehaviour
 
     [SerializeField] private AudioClip healthPickUp;
 
+    public GameObject healthPickUpEffect; //Particle Effect
+
     private void OnTriggerEnter(Collider hitInfo)
     {
         Player player = hitInfo.GetComponent<Player>();
@@ -15,6 +17,7 @@ public class HealthPack : MonoBehaviour
         {
             AudioManager.Instance.phthSFX(healthPickUp); //when player hits health pack AudioManager script will make the audio source and play sound
             player.PlayerHealthGrab(playerHealthHit);
+            Instantiate(healthPickUpEffect, transform.position, Quaternion.identity);
             Destroy(gameObject); //health pack destroyed when hit
         }
 

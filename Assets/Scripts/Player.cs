@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool isGrounded; //Checking if the player is in the air
 
+    public GameObject vineHitEffect; //Particle Effect
+
     // Heart Health System
     public int numOfHearts;
     public int health;
@@ -285,9 +287,9 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Vines")
         {
             //Debug.Log("hit");
-            print("ouchie");
+            //print("ouchie");
             myRigidbody.AddForce(Vector3.up * hitSpeed);
-           
+            Instantiate(vineHitEffect, transform.position, Quaternion.identity);
             PlayerTakeDamage(vineDamage);
         }
     }
