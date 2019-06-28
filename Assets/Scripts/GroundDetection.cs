@@ -6,21 +6,27 @@ public class GroundDetection : MonoBehaviour
 {
     public bool grounded;
 
-
+    public int groundNumber;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Ground")
         {
             grounded = true;
+            groundNumber++;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //if (other.gameObject.tag == "")
+        if (other.gameObject.tag == "Ground")
         {
-            grounded = false;
+            //grounded = false;
+            groundNumber--;
+            if (groundNumber <= 0)
+            {
+                grounded = false;
+            }
         }
     }
 
