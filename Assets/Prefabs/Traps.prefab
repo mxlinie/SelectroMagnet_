@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5972104923538713480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3672.6968, y: -2082.8904, z: -0.04}
+  m_LocalPosition: {x: -3672.6968, y: -2082.8904, z: -16.59}
   m_LocalScale: {x: 3.8709676, y: 0.80241287, z: 3.8709676}
   m_Children: []
   m_Father: {fileID: 5972104923733744476}
@@ -141,7 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPlayerDamage: 1
-  trapTrigger: {fileID: 0}
+  trapTrigger: {fileID: 5972104923189870316}
+  trapHitEffect: {fileID: 1301250150714492771, guid: 7839a8b58c859d24d93344e3e833baa6,
+    type: 3}
   hitPlayer: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
 --- !u!54 &5972104923538713490
 Rigidbody:
@@ -182,7 +184,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5972104923733744477}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25833333, y: 0.25833333, z: 0.25833333}
   m_Children:
