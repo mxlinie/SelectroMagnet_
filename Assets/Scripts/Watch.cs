@@ -8,14 +8,18 @@ public class Watch : MonoBehaviour
 
     [SerializeField] private AudioClip objectPickUp;
 
+    public GameObject pickupPanel;
+
     void OnTriggerStay(Collider other)
     {
         UIManager.Instance.ToggleText(message); //Message set in the inspector
         if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E)) //if player is near watch object can be picked up by player 
         {
             Destroy(gameObject);
+            //gameObject.SetActive(false);
             AudioManager.Instance.ipSFX(objectPickUp); //when player hits Watch and presses E, Audio Plays
             Debug.Log(name);
+            pickupPanel.SetActive(true);
             PickUp();
         }
 
@@ -34,7 +38,15 @@ public class Watch : MonoBehaviour
     void PickUp()
     {
         UIManager.Instance.ToggleText(""); //message is blank when player picks up object
+        //StartCoroutine(PickUpPanel());
     }
+
+    /*IEnumerator PickUpPanel()
+    {
+        yield return new WaitForSeconds(1f);
+        pickupPanel.SetActive(true);
+    }*/
+
     // Start is called before the first frame update
     void Start()
     {

@@ -7,14 +7,14 @@ public class Vine : MonoBehaviour
 
     public int vinePlayerDamage = 1;
     public GameObject vine;
-    //[SerializeField] private AudioClip hitPlayer;
+    [SerializeField] private AudioClip VhitPlayer;
 
     private void OnTriggerEnter(Collider hitInfo)
  {
      Player player = hitInfo.GetComponent<Player>();
      if (player != null)
      {
-         //AudioManager.Instance.phSFX(hitPlayer); //when player enters the trigger zone sound clip plays
+         AudioManager.Instance.phSFX(VhitPlayer); //when player enters the trigger zone and gets hit sound clip plays
          player.PlayerTakeDamage(vinePlayerDamage);
             vine.SetActive(false);
      }

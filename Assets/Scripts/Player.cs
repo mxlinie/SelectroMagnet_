@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody rb;
 
+    [SerializeField] private AudioClip BounceVineHitplayer;
+
     //Handling jump movements
     private bool jump;
 
@@ -290,6 +292,7 @@ public class Player : MonoBehaviour
             //print("ouchie");
             myRigidbody.AddForce(Vector3.up * hitSpeed);
             Instantiate(vineHitEffect, transform.position, Quaternion.identity);
+            AudioManager.Instance.phthSFX(BounceVineHitplayer); //Plays when player makes contact with vine
             PlayerTakeDamage(vineDamage);
         }
     }
