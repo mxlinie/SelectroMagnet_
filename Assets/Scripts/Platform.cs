@@ -15,7 +15,7 @@ public class Platform : MonoBehaviour
     
     void FixedUpdate()
     {
-        new Vector3 platPos(0,posY,posZ);
+        //new Vector3 platPos(0,posY,posZ); //error when I opened game
         if(transform.position.z != Waypoints[CurrentPoint].transform.position.z)
         {
             transform.position = Vector3.MoveTowards(transform.position, Waypoints[CurrentPoint].transform.position, platformSpeed * Time.deltaTime);

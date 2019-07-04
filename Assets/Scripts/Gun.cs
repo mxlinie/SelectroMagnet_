@@ -42,12 +42,14 @@ public class Gun : MonoBehaviour
                     {
                         //print(hit.collider.gameObject.GetComponent<MeshRenderer>().materials.Length);
                         //hit.collider.gameObject.GetComponent<MeshRenderer>().material.SetInt("Pack_03_M_P", 1);
+                        hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(58, 125, 251, 255); //Changes Albedo to blue
                         hit.collider.gameObject.GetComponent<Polarity>().SetPole(Pole.Positive);
                         positivePolarityObject = hit.collider.gameObject;
                         StartCoroutine(MoveObjects());
                     }
                     else
                     {
+                        hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255); //Changes Albedo back to white
                         hit.collider.gameObject.GetComponent<Polarity>().SetPole(Pole.Neutral);
                         positivePolarityObject = null;
                     }
@@ -67,12 +69,14 @@ public class Gun : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<Polarity>().thisPole != Pole.Negative)
                     {
+                        hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(255, 88, 88, 255); //Changes Albedo to red
                         hit.collider.gameObject.GetComponent<Polarity>().SetPole(Pole.Negative);
                         negativePolarityObject = hit.collider.gameObject;
                         MoveObjects();
                     }
                     else
                     {
+                        hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255); //Changes Albedo back to white
                         hit.collider.gameObject.GetComponent<Polarity>().SetPole(Pole.Neutral);
                         negativePolarityObject = null;
                     }
