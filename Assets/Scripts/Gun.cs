@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
 
     // Update is called once per frame
 
-
+   // https://answers.unity.com/questions/19747/simultaneous-single-and-double-click-functions.html;
 
     
     void FixedUpdate()
@@ -47,6 +47,8 @@ public class Gun : MonoBehaviour
                         positivePolarityObject = hit.collider.gameObject;
                         StartCoroutine(MoveObjects());
                     }
+
+                 
                     else
                     {
                         hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255); //Changes Albedo back to white
@@ -74,6 +76,8 @@ public class Gun : MonoBehaviour
                         negativePolarityObject = hit.collider.gameObject;
                         MoveObjects();
                     }
+
+                   
                     else
                     {
                         hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255); //Changes Albedo back to white
