@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    public GameObject Player;
+   // public GameObject Player;
     //public Transform[] Waypoints;
 
     //public float platformSpeed = 2;
