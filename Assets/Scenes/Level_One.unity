@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6509,6 +6509,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b3928424885104ab572c5ae110f07e, type: 3}
+--- !u!224 &688825135 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5556248050476705823, guid: 8260701c536ee2c4aa792ed586928fb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5556248049785954689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &690714454
 GameObject:
   m_ObjectHideFlags: 0
@@ -11891,6 +11897,51 @@ Transform:
   m_Father: {fileID: 334180443}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1163922582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163922583}
+  - component: {fileID: 1163922584}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1163922583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163922582}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -206.11919, y: -225.74829, z: 280.6313}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 688825135}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1163922584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163922582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fb9a500e04f984da04007e1a4c3425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 9215048835449869247}
+  respawnPoint: {fileID: 2013944874}
 --- !u!1001 &1163984293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13227,6 +13278,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5ab72de14aa4a3748919383d24e252a3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 446ee373f857a4248ba32dc222469f41, type: 3}
+--- !u!114 &1348230106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5556248050830150305, guid: 8260701c536ee2c4aa792ed586928fb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5556248049785954689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa230423b48039746b0f3f8ff37d6e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1349465607 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 3bb30c3950d29d74d9e3343a82b068d1,
@@ -20453,6 +20516,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556248048923161384, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1348230106}
+    - target: {fileID: 5556248048923161384, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556248048923161384, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8260701c536ee2c4aa792ed586928fb9, type: 3}
