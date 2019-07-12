@@ -40,6 +40,11 @@ public class Gun : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<Polarity>().thisPole != Pole.Positive)
                     {
+                        if(positivePolarityObject != null)
+                        {
+                            ResetPolarity(positivePolarityObject);
+                        }
+                        Debug.Log("Positive");
                         //print(hit.collider.gameObject.GetComponent<MeshRenderer>().materials.Length);
                         //hit.collider.gameObject.GetComponent<MeshRenderer>().material.SetInt("Pack_03_M_P", 1);
                         hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(58, 125, 251, 255); //Changes Albedo to blue
@@ -71,10 +76,15 @@ public class Gun : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<Polarity>().thisPole != Pole.Negative)
                     {
+                        if (negativePolarityObject != null)
+                        {
+                            ResetPolarity(negativePolarityObject);
+                        }
+                        Debug.Log("Negative");
                         hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color32(255, 88, 88, 255); //Changes Albedo to red
                         hit.collider.gameObject.GetComponent<Polarity>().SetPole(Pole.Negative);
                         negativePolarityObject = hit.collider.gameObject;
-                        MoveObjects();
+                        StartCoroutine(MoveObjects());
                     }
 
                    
@@ -93,10 +103,11 @@ public class Gun : MonoBehaviour
 
     IEnumerator MoveObjects()
     {
-        if(positivePolarityObject != null && negativePolarityObject != null)
+        if(positivePolarityObject != null && negativePolarityObject != positivePolarityObject && negativePolarityObject != null)
         {
-            
+            Debug.Log("Success");
             positivePolarityObject.transform.DOMove(negativePolarityObject.transform.position, 2).OnComplete(SetNull);
+
             //negativePolarityObject.transform.DOMove(positivePolarityObject.transform.position, 2).OnComplete(SetNull);
         AudioManager.Instance.msSFX(magnetSuccess);
         }
@@ -110,5 +121,11 @@ public class Gun : MonoBehaviour
         negativePolarityObject = null;
     }
 
+    void ResetPolarity (GameObject platform)
+    {
+        platform.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255); //Changes Albedo back to white
+        platform.GetComponent<Polarity>().SetPole(Pole.Neutral);
+        
+    }
 
 }
