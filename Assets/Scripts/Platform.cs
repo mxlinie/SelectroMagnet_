@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-   // public GameObject Player;
+    // public GameObject Player;
     //public Transform[] Waypoints;
 
     //public float platformSpeed = 2;
@@ -38,14 +38,26 @@ public class Platform : MonoBehaviour
 
 
     //}
+    private Polarity polarity;
+    private Gun gun;
+
     public Transform[] Waypoints;
     public float moveSpeed = 3;
     //public float rotateSpeed = 0.5f;
     //public float scaleSpeed = 0f;
     public int CurrentPoint = 0;
 
+    private void Awake()
+    {
+        polarity = GetComponent<Polarity>();
+        gun = FindObjectOfType<Gun>();
+    }
+
     void FixedUpdate()
     {
+        if (gun && gun.tweening && polarity && polarity.thisPole != Pole.Neutral)
+            return;
+
         if (transform.position != Waypoints[CurrentPoint].transform.position)
         {
             transform.position = Vector3.MoveTowards(transform.position, Waypoints[CurrentPoint].transform.position, moveSpeed * Time.deltaTime);

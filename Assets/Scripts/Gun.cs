@@ -16,6 +16,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private AudioClip rightMouseClick;
     [SerializeField] private AudioClip magnetSuccess;
 
+    [System.NonSerialized] public bool tweening;
+    private Vector3 dampVelocity;
+
     // Update is called once per frame
 
    // https://answers.unity.com/questions/19747/simultaneous-single-and-double-click-functions.html;
@@ -106,7 +109,19 @@ public class Gun : MonoBehaviour
         if(positivePolarityObject != null && negativePolarityObject != positivePolarityObject && negativePolarityObject != null)
         {
             Debug.Log("Success");
-            positivePolarityObject.transform.DOMove(negativePolarityObject.transform.position, 2).OnComplete(SetNull);
+            tweening = true;
+
+            while(tweening && Vector3.Distance(negativePolarityObject.transform.position, positivePolarityObject.transform.position) > .1F)
+            {
+                positivePolarityObject.transform.position = Vector3.SmoothDamp(positivePolarityObject.transform.position, negativePolarityObject.transform.position, ref dampVelocity, 1F);
+
+                yield return 0;
+            }
+
+            SetNull();
+            tweening = false;
+
+            //currentTween = positivePolarityObject.transform.DOMove(negativePolarityObject.transform.position, 2).OnComplete(SetNull);
 
             //negativePolarityObject.transform.DOMove(positivePolarityObject.transform.position, 2).OnComplete(SetNull);
         AudioManager.Instance.msSFX(magnetSuccess);
@@ -115,11 +130,25 @@ public class Gun : MonoBehaviour
         yield return 0;
     }
 
+    public void OnPlatformCollided(GameObject source, GameObject other)
+    {
+        if(source == positivePolarityObject && other == negativePolarityObject)
+        {
+            tweening = false;
+        }
+    }
+
     void SetNull()
     {
+
+        // Want to create parenting for any object attached to moving platform.
+        //Need to check that the parent has to have the Platform script attached to it. If not, it will interfere with game function.
+        //Parenting has to occur the instant that two objects make contact with each other.
         Debug.Log("Complete");
-        ResetPolarity(negativePolarityObject);
-        ResetPolarity(positivePolarityObject);
+        if(negativePolarityObject)
+            ResetPolarity(negativePolarityObject);
+        if(positivePolarityObject)
+            ResetPolarity(positivePolarityObject);
         positivePolarityObject = null;
         negativePolarityObject = null;
     }

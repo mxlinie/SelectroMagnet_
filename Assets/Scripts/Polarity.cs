@@ -9,10 +9,12 @@ public class Polarity : MonoBehaviour
     //public Material[] matList = new Material[2];  
 
     public Pole thisPole;
+    private Gun gun;
 
     void Start()
     {
         //gameObject.GetComponent<MeshRenderer>().material = matList[1];
+        gun = FindObjectOfType<Gun>();
     }
 
     public void SetPole(Pole newPole)
@@ -23,5 +25,10 @@ public class Polarity : MonoBehaviour
             if (thisPole != newPole)
                 thisPole = newPole;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        gun.OnPlatformCollided(gameObject, other.gameObject);
     }
 }
