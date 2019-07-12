@@ -8,8 +8,10 @@ public class GroundDetection : MonoBehaviour
 
     public int groundNumber;
 
+
     void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("I am in the trigger");
         if (other.gameObject.tag == "Ground")
         {
             grounded = true;
@@ -19,6 +21,7 @@ public class GroundDetection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //Debug.Log("I am out of the trigger");
         if (other.gameObject.tag == "Ground")
         {
             //grounded = false;
@@ -39,6 +42,9 @@ public class GroundDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (groundNumber <= 0)
+        {
+            grounded = false;
+        }
     }
 }

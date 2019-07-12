@@ -57,13 +57,18 @@ public class Player : MonoBehaviour
     public Image[] hearts;
     public Sprite filledHeart;
     public Sprite emptyHeart;
+
+    //Player respawn
+    [SerializeField] public Vector3 respawnPoint;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
+        jump = false;
         myRigidbody = GetComponent<Rigidbody>(); // stating rigibody
         groundedScript = feet.GetComponent<GroundDetection>();
+        respawnPoint = this.gameObject.transform.position;
     }
 
     #region Movement
@@ -89,8 +94,9 @@ public class Player : MonoBehaviour
         else//(!jump && !isGrounded)
         {
             //jump = true;
-            isGrounded = true;
-            myRigidbody.AddForce(new Vector2(0, jumpSpeed * 0));
+            //isGrounded = true;
+            //myRigidbody.AddForce(new Vector2(0, jumpSpeed * 0));
+            
         }
     }
 
@@ -125,7 +131,13 @@ public class Player : MonoBehaviour
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
         //transform.rotation = Quaternion.LookRotation(movement);
         //if (movement != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement.normalized), 0.2f);\
-
+        
+        //if (jump && isGrounded)
+        //{
+        //    //isGrounded = false;
+        //    myRigidbody.AddForce(new Vector2(0, jumpSpeed));
+        //    jump = false; // stops player from jumping repeatively
+        //}
 
         /*if (Input.GetKey(KeyCode.Space))
         {
@@ -197,9 +209,12 @@ public class Player : MonoBehaviour
     #region Death
     void PlayerDie()
     {
+        HeartSystem();
+        //this.gameObject.transform.position = respawnPoint;
         losePanel.SetActive(true);
         //Destroy(gameObject);
         player.SetActive(false); //Camera error Code doesn't appear anymore
+        health = 0;
         GameManager.Instance.health = 3;
     }
     #endregion
@@ -296,5 +311,21 @@ public class Player : MonoBehaviour
             PlayerTakeDamage(vineDamage);
         }
     }
+
+    /*public void RespawnPlayer()
+    {
+        Debug.Log("Hey world!");
+        groundedScript.groundNumber = 0;
+        //groundedScript.groundNumber--;
+        groundedScript.grounded = false;
+        this.gameObject.transform.position = respawnPoint;
+        groundedScript.groundNumber = 0;
+        groundedScript.grounded = false;
+        jump = false;
+        losePanel.SetActive(false);
+        health = 3; //Calling public variables directly to change to 3 health with 3 hearts
+        numOfHearts = 3;
+        HeartSystem(); //Allows the public variables above to work by calling the HeartSystem fuction
+    }*/
 
 }

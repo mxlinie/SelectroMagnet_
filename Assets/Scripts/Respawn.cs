@@ -16,7 +16,8 @@ public class Respawn : MonoBehaviour
 
     public void PlayerRespawn()
     {
-        player.transform.position = respawnPoint.transform.position;
+        //player.transform.position = respawnPoint.transform.position;
+
     }
 
 }

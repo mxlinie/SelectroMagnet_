@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+
+
     public GameObject lightOn;
     public GameObject lightOff;
-    public Player player;
+    public GameObject PlayerR;
 
     [SerializeField] private AudioClip passCheckpoint;
+    private Player ps;
 
     void Start()
     {
         lightOn.SetActive(false);
         lightOff.SetActive(true);
+        ps = PlayerR.GetComponent<Player>();
+        //ps.RespawnPlayer();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +26,8 @@ public class CheckPoint : MonoBehaviour
         lightOn.SetActive(true);
         lightOff.SetActive(false);
         AudioManager.Instance.cSFX(passCheckpoint);
-        Debug.Log("check");
+        ps.respawnPoint = this.gameObject.transform.position;
+        //Debug.Log("check");
     }
 
 }
