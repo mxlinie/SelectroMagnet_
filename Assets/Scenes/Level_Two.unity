@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 174124887}
   - component: {fileID: 174124888}
   - component: {fileID: 174124889}
+  - component: {fileID: 174124890}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Ground
@@ -305,6 +306,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPole: 0
+--- !u!54 &174124890
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174124882}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &186089718
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +456,7 @@ GameObject:
   - component: {fileID: 263598670}
   - component: {fileID: 263598669}
   - component: {fileID: 263598673}
+  - component: {fileID: 263598674}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Ground
@@ -532,6 +550,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPole: 0
+--- !u!54 &263598674
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263598668}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!114 &335756281 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5556248049400922453, guid: 8260701c536ee2c4aa792ed586928fb9,
