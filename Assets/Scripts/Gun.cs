@@ -117,6 +117,9 @@ public class Gun : MonoBehaviour
 
     void SetNull()
     {
+        Debug.Log("Complete");
+        ResetPolarity(negativePolarityObject);
+        ResetPolarity(positivePolarityObject);
         positivePolarityObject = null;
         negativePolarityObject = null;
     }
