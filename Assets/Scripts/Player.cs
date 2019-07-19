@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     #region Variables
     private Rigidbody myRigidbody;
 
@@ -64,10 +66,16 @@ public class Player : MonoBehaviour
     [SerializeField] public Vector3 respawnPoint;
     #endregion
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         numOfHearts = GameManager.Instance.maxHealth;
+        health = GameManager.Instance.maxPlayerHealth;
         jump = false;
         myRigidbody = GetComponent<Rigidbody>(); // stating rigibody
         groundedScript = feet.GetComponent<GroundDetection>();

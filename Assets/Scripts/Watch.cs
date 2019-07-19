@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Watch : MonoBehaviour
 {
+    public static Watch Instance;
+
     public string message;
 
     [SerializeField] private AudioClip objectPickUp;
 
     public GameObject pickupPanel;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void OnTriggerStay(Collider other)
     {
@@ -35,9 +42,10 @@ public class Watch : MonoBehaviour
 
     }
 
-    void PickUp()
+    public void PickUp()
     {
         UIManager.Instance.ToggleText(""); //message is blank when player picks up object
+        GameManager.Instance.OnPickUp();
         //StartCoroutine(PickUpPanel());
     }
 

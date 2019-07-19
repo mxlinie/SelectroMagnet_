@@ -7,8 +7,10 @@ public class GameManager : Singleton<GameManager>
 {
     public int health = 3;
     public int maxHealth = 3;
+    public int maxPlayerHealth = 3;
     //public int score = 0;
-    public static GameManager Instance;
+    //public static GameManager Instance;
+    //private static GameManager instance;
 
     public string levelTwo;
 
@@ -18,7 +20,12 @@ public class GameManager : Singleton<GameManager>
     {
         //score = 0;
         health = 3;
+    }
 
+    public void OnPickUp()
+    {
+        Player.Instance.numOfHearts = 4;
+        Player.Instance.health = 4;
     }
 
     public void HealthScore(int newHealth) //health trap hit
@@ -34,10 +41,10 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    //private void Awake()
+    //{
+    //    Instance = this;
+    //}
     
     // Update is called once per frame
     void Update()
