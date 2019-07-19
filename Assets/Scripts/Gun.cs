@@ -132,9 +132,16 @@ public class Gun : MonoBehaviour
 
     public void OnPlatformCollided(GameObject source, GameObject other)
     {
-        if(source == positivePolarityObject && other == negativePolarityObject)
+        if(source == positivePolarityObject && other == negativePolarityObject )
         {
             tweening = false;
+            if (other.gameObject.tag == "Ground")
+            {
+                //This will make the player a child of the Obstacle
+                source.transform.parent = other.gameObject.transform; 
+                                                                      //Debug.Log("Stuck on Platform!");
+
+            }
         }
     }
 
