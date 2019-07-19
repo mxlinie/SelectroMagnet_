@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GroundDetection : MonoBehaviour
 {
+    public static GroundDetection Instance;
+
     public bool grounded;
 
     public int groundNumber;
+
+
 
 
     void OnTriggerEnter(Collider other)

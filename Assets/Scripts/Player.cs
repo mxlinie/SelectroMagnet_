@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
     public Sprite filledHeart;
     public Sprite emptyHeart;
 
+    //public Collider mCol;
+
     //Player respawn
     [SerializeField] public Vector3 respawnPoint;
     #endregion
@@ -65,10 +67,12 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numOfHearts = GameManager.Instance.maxHealth;
         jump = false;
         myRigidbody = GetComponent<Rigidbody>(); // stating rigibody
         groundedScript = feet.GetComponent<GroundDetection>();
         respawnPoint = this.gameObject.transform.position;
+        //mCol = GetComponent<Collider>();
     }
 
     #region Movement
@@ -89,6 +93,7 @@ public class Player : MonoBehaviour
             //isGrounded = false;
             myRigidbody.AddForce(new Vector2(0, jumpSpeed));
             jump = false; // stops player from jumping repeatively
+            isGrounded = false;
         }
 
         else//(!jump && !isGrounded)
@@ -210,7 +215,9 @@ public class Player : MonoBehaviour
     void PlayerDie()
     {
         HeartSystem();
-        //this.gameObject.transform.position = respawnPoint;
+        //feet.SetActive(false);
+        //groundedScript.grounded = false;
+        this.gameObject.transform.position = respawnPoint;
         losePanel.SetActive(true);
         //Destroy(gameObject);
         player.SetActive(false); //Camera error Code doesn't appear anymore
@@ -312,20 +319,36 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*public void RespawnPlayer()
+
+    public void RespawnPlayer()
     {
+        //Destroy(GetComponent<Collider>());
+        Destroy(feet.GetComponent<Collider>());
+        //!mCol.enabled;
         Debug.Log("Hey world!");
         groundedScript.groundNumber = 0;
         //groundedScript.groundNumber--;
-        groundedScript.grounded = false;
+        //groundedScript.grounded = false;
         this.gameObject.transform.position = respawnPoint;
-        groundedScript.groundNumber = 0;
-        groundedScript.grounded = false;
+        //groundedScript.groundNumber = 0;
+        //groundedScript.grounded = false;
         jump = false;
         losePanel.SetActive(false);
         health = 3; //Calling public variables directly to change to 3 health with 3 hearts
         numOfHearts = 3;
         HeartSystem(); //Allows the public variables above to work by calling the HeartSystem fuction
-    }*/
+        StartCoroutine(ResetCollider());
+    }
+
+    IEnumerator ResetCollider()
+    {
+        yield return new WaitForSeconds(0);
+        //feet.SetActive(true);
+        //feet.GetComponent<Collider>().enabled = true;
+        feet.AddComponent<BoxCollider>();
+        feet.GetComponent<BoxCollider>().size = new Vector3(0.34f, 0.22f, 1f);
+        feet.GetComponent<BoxCollider>().center = new Vector3(0f, 0.15f, 0f);
+        feet.GetComponent<BoxCollider>().isTrigger = true;
+    }
 
 }

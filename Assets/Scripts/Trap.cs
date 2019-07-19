@@ -11,6 +11,8 @@ public class Trap : MonoBehaviour
 
     [SerializeField] private AudioClip hitPlayer;
 
+    //public GroundDetection groundedScript;
+
     private void OnTriggerEnter(Collider hitInfo)
     {
         Player player = hitInfo.GetComponent<Player>();
@@ -19,13 +21,14 @@ public class Trap : MonoBehaviour
             AudioManager.Instance.phSFX(hitPlayer); //when player enters the trigger zone sound clip plays
             Instantiate(trapHitEffect, transform.position, Quaternion.identity); //When player hits trap particle system with play
             player.PlayerTakeDamage(hitPlayerDamage);
+            //groundedScript.grounded = false;
         }
 
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        //groundedScript = GetComponent<GroundDetection>();
     }
 
     // Update is called once per frame

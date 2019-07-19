@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public static MainMenu Instance;
+
     public GameObject pausePanel;
     public GameObject PlayerRR;
 
@@ -17,6 +19,7 @@ public class MainMenu : MonoBehaviour
     public void LevelSelect(string levelName)
     {
         SceneManager.LoadScene(levelName);
+        
     }
 
     public void Resume()
