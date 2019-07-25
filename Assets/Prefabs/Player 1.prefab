@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 1519359716665350622}
   - component: {fileID: 1519359716665350562}
   - component: {fileID: 1519359716665350563}
+  - component: {fileID: 9215048835449869253}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -201,7 +202,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519359716665350621}
-  m_Material: {fileID: 13400000, guid: 820d971b952a1574a800a66ea2e4dbf1, type: 2}
+  m_Material: {fileID: 13400000, guid: 414c43c8b7b021f4db9d20192d64a2e1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -237,23 +238,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1519359716665350621}
-  groundedScript: {fileID: 0}
-  feet: {fileID: 7707831096246041075}
+  runSpeed: 6
+  jumpSpeed: 4.5
+  feet: {fileID: 7707831096246041072}
+  rayCount: 3
+  rayOffset: {x: 0.45, y: 0, z: 0}
   losePanel: {fileID: 0}
-  speed: 200
-  jumpSpeed: 300
   vineDamage: 1
   BounceVineHitplayer: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
-  groundPoints:
-  - {fileID: 7707831096246041072}
-  groundRadius: 0.2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
-  isGrounded: 0
   vineHitEffect: {fileID: 8345591586767358007, guid: 5e6f87a52dfe9e14bbda54a24e43ccc5,
     type: 3}
-  numOfHearts: 3
+  numOfHearts: 5
   health: 3
   hearts:
   - {fileID: 0}
@@ -263,6 +258,26 @@ MonoBehaviour:
   - {fileID: 0}
   filledHeart: {fileID: 21300000, guid: 058b35e71f7abe44fb22e5e764715748, type: 3}
   emptyHeart: {fileID: 21300000, guid: e6c0ceaa7d364b044828167d025bb30c, type: 3}
+  respawnPoint: {x: 0, y: 0, z: 0}
+--- !u!95 &9215048835449869253
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519359716665350621}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eefd771551416cd4c8e30b9c4ff2520c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7707831095104901997
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,12 +619,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7707831096246041072}
-  - component: {fileID: 7707831096246041070}
-  - component: {fileID: 7707831096246041073}
-  - component: {fileID: 7707831096246041071}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Ground Point
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -622,55 +634,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7707831096246041075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0009999275, y: -1.28, z: -0.008}
+  m_LocalPosition: {x: 0.0009999275, y: -1.69, z: -0.008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1519359716665350561}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7707831096246041070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7707831096246041075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c48e66a4ae637a94b9a581a43f254dd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grounded: 0
-  groundNumber: 0
---- !u!65 &7707831096246041073
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7707831096246041075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.34, y: 0.22, z: 1}
-  m_Center: {x: 0, y: 0.15, z: 0}
---- !u!54 &7707831096246041071
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7707831096246041075}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!1 &7707831096399551068
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,16 +798,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 3914427694447541834, guid: 9c02731c2856e654dad3727c69a22c0f,
-        type: 3}
-      propertyPath: leftMouseClick
-      value: 
-      objectReference: {fileID: 8300000, guid: d2bdca082fbef3e4fb8bbed30f5d03d8, type: 3}
-    - target: {fileID: 3914427694447541834, guid: 9c02731c2856e654dad3727c69a22c0f,
-        type: 3}
-      propertyPath: rightMouseClick
-      value: 
-      objectReference: {fileID: 8300000, guid: 324c0f003db50c946ac1fee02c74f782, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c02731c2856e654dad3727c69a22c0f, type: 3}
 --- !u!4 &1519359716894284040 stripped

@@ -12,7 +12,7 @@ public class Laser : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    void FixedUpdate()
+    void Update() //The Line will now be constantly rendered while following player movement
     {
         Vector3 endPosition = transform.position + (transform.right * laserBeamLength);
         lineRenderer.SetPositions(new Vector3[] { transform.position, endPosition });
