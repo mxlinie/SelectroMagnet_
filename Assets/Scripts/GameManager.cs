@@ -24,8 +24,10 @@ public class GameManager : Singleton<GameManager>
 
     public void OnPickUp()
     {
-        Player.Instance.numOfHearts = 4;
-        Player.Instance.health = 4;
+        //Player.Instance.numOfHearts = 4;
+        //Player.Instance.health = 4;
+        maxHealth = 4;
+        maxPlayerHealth = 4;
     }
 
     public void HealthScore(int newHealth) //health trap hit
