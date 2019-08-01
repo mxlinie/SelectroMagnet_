@@ -65,7 +65,8 @@ public class Player : MonoBehaviour
     //[SerializeField]
     //private bool isGrounded; //Checking if the player is in the air
 
-    public GameObject vineHitEffect; //Particle Effect
+    public GameObject vineHitEffect; //Vine Particle Effect
+    public GameObject walkEffect; //Walking particle effect
 
     // Heart Health System
     public int numOfHearts;
@@ -152,6 +153,7 @@ public class Player : MonoBehaviour
         {
             //Debug.Log("Im grounded");
             horizontal = Input.GetAxis("Horizontal") * runSpeed;
+            //Instantiate(walkEffect, transform.position, Quaternion.identity);
         }
         else
         {
@@ -169,10 +171,12 @@ public class Player : MonoBehaviour
         if (horizontal < -0.1f)
         {
             Flip(true); //if moving left with A key, player will flip -180 degrees
+            //Instantiate(walkEffect);
         }
         else if (horizontal > 0.1f)
         {
             Flip(false); //Player remains in same position
+            //Instantiate(walkEffect, player.transform.position, player.transform.rotation);
         }
     }
 
