@@ -25,7 +25,7 @@ public class PhotoFrame : MonoBehaviour
             Destroy(gameObject);
             AudioManager.Instance.ipSFX(objectFramePickUp); //when player hits Watch and presses E, Audio Plays
             pickupPanel.SetActive(true);
-            PickUp();
+            PhotoPickUp();
         }
 
     }
@@ -39,9 +39,9 @@ public class PhotoFrame : MonoBehaviour
 
     }
 
-    public void PickUp()
+    public void PhotoPickUp()
     {
         UIManager.Instance.ToggleText(""); //message is blank when player picks up object
-        GameManager.Instance.OnPickUp();
+        GameManager.Instance.OnPhotoPickUp(); //So max health can change for level 3
     }
 }

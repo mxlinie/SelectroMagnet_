@@ -30,6 +30,12 @@ public class GameManager : Singleton<GameManager>
         maxPlayerHealth = 4;
     }
 
+    public void OnPhotoPickUp()
+    {
+        maxHealth = 5;
+        maxPlayerHealth = 5;
+    }
+
     public void HealthScore(int newHealth) //health trap hit
     {
         health -= newHealth;
