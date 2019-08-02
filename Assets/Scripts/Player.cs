@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-    public Animator anim;
+    
 
     #region Variables
     //private Rigidbody myRigidbody;
@@ -372,10 +372,6 @@ public class Player : MonoBehaviour
         //feet.GetComponent<BoxCollider>().isTrigger = true;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Statue")
-            anim.SetTrigger("StatueMove");
-    }
+    
 
 }
