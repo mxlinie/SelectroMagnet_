@@ -207,14 +207,6 @@ namespace DG.Tweening
                     tween = ((tk2dBaseSprite)target).DOColor(endValueColor, duration);
                     break;
 #endif
-#if DOTWEEN_TMP
-                case TargetType.TextMeshProUGUI:
-                    tween = ((TextMeshProUGUI)target).DOColor(endValueColor, duration);
-                    break;
-                case TargetType.TextMeshPro:
-                    tween = ((TextMeshPro)target).DOColor(endValueColor, duration);
-                    break;
-#endif
                 }
                 break;
             case DOTweenAnimationType.Fade:
@@ -246,14 +238,6 @@ namespace DG.Tweening
                     tween = ((tk2dBaseSprite)target).DOFade(endValueFloat, duration);
                     break;
 #endif
-#if DOTWEEN_TMP
-                case TargetType.TextMeshProUGUI:
-                    tween = ((TextMeshProUGUI)target).DOFade(endValueFloat, duration);
-                    break;
-                case TargetType.TextMeshPro:
-                    tween = ((TextMeshPro)target).DOFade(endValueFloat, duration);
-                    break;
-#endif
                 }
                 break;
             case DOTweenAnimationType.Text:
@@ -264,14 +248,6 @@ namespace DG.Tweening
 #if DOTWEEN_TK2D
                 case TargetType.tk2dTextMesh:
                     tween = ((tk2dTextMesh)target).DOText(endValueString, duration, optionalBool0, optionalScrambleMode, optionalString);
-                    break;
-#endif
-#if DOTWEEN_TMP
-                case TargetType.TextMeshProUGUI:
-                    tween = ((TextMeshProUGUI)target).DOText(endValueString, duration, optionalBool0, optionalScrambleMode, optionalString);
-                    break;
-                case TargetType.TextMeshPro:
-                    tween = ((TextMeshPro)target).DOText(endValueString, duration, optionalBool0, optionalScrambleMode, optionalString);
                     break;
 #endif
                 }

@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-    public TextMeshProUGUI healthText;
-    public TextMeshProUGUI UIObjectText;
+    //public TextMeshProUGUI healthText;
+    //public TextMeshProUGUI UIObjectText;
 
     public GameObject pausePanel;
     bool Paused = false;
 
     private void Start()
     {
-        UIObjectText.text = ""; //Text is blank at the start of the game
+        //UIObjectText.text = ""; //Text is blank at the start of the game
         pausePanel.gameObject.SetActive(false);
     }
 
@@ -58,12 +58,12 @@ public class UIManager : MonoBehaviour
 
     public void ToggleText(string itemName) //Toggle text is individually set in inspector for each item
     {
-        UIObjectText.text = itemName;
+        //UIObjectText.text = itemName;
     }
 
     public void UpdateHealth()
     {
-        healthText.text = "Health: <color=black>" + GameManager.Instance.health.ToString();
+        //healthText.text = "Health: <color=black>" + GameManager.Instance.health.ToString();
     }
 
 }
