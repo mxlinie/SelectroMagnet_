@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3529284, g: 0.5736776, b: 0.8686604, a: 1}
+  m_IndirectSpecularColor: {r: 0.3528685, g: 0.57365435, b: 0.8686631, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5330,6 +5330,16 @@ PrefabInstance:
       propertyPath: hearts.Array.data[4]
       value: 
       objectReference: {fileID: 87497543}
+    - target: {fileID: 1519359716665350563, guid: 784334169e25268499ebeda7bec61e92,
+        type: 3}
+      propertyPath: walkEffect
+      value: 
+      objectReference: {fileID: 1459824309}
+    - target: {fileID: 6314696020467053258, guid: 784334169e25268499ebeda7bec61e92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.043
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784334169e25268499ebeda7bec61e92, type: 3}
 --- !u!1001 &1403253814
@@ -5630,6 +5640,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1025429, y: 5.0757284, z: 1.8162537}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!198 &1459824309 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4658155441426216225, guid: 784334169e25268499ebeda7bec61e92,
+    type: 3}
+  m_PrefabInstance: {fileID: 1388341080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1463395697
 GameObject:
   m_ObjectHideFlags: 0

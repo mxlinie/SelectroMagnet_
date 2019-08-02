@@ -17,7 +17,7 @@ public class ObjectReset : MonoBehaviour
         //orgPosPlatforms = transform.position;
         foreach (GameObject polPlat in platforms)
         {
-            orgPos.Add(polPlat.transform.localPosition);
+            orgPos.Add(polPlat.transform.position);
         }
     }
 
@@ -40,8 +40,8 @@ public class ObjectReset : MonoBehaviour
         
         foreach (GameObject polPlat in platforms)
         {
-            Debug.Log("Index "+i+" Current pos = "+polPlat.transform.localPosition+" -- Target pos = " + orgPos[i]);
-            polPlat.transform.localPosition = orgPos[i];
+            Debug.Log("Index "+i+" Current pos = "+polPlat.transform.position+" -- Target pos = " + orgPos[i]);
+            polPlat.transform.position = orgPos[i];
             polPlat.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255);
             polPlat.GetComponent<Polarity>().thisPole = Pole.Neutral;
             i++;
