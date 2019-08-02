@@ -21229,8 +21229,66 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 0
-    m_Bursts: []
+    m_BurstCount: 1
+    m_Bursts:
+    - serializedVersion: 2
+      time: 0
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 30
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
+      probability: 1
   SizeModule:
     enabled: 1
     curve:
@@ -26568,11 +26626,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5556248050544064438, guid: 8260701c536ee2c4aa792ed586928fb9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5556248050476705823, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26678,6 +26731,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5556248050830150305, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: PlayerRR
+      value: 
+      objectReference: {fileID: 9215048835449869251}
+    - target: {fileID: 5556248050544064438, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -26691,7 +26754,7 @@ PrefabInstance:
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: Press [E] To Pick Up Watch
       objectReference: {fileID: 0}
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
@@ -26722,12 +26785,12 @@ PrefabInstance:
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 1
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
@@ -26772,7 +26835,7 @@ PrefabInstance:
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
@@ -26782,6 +26845,11 @@ PrefabInstance:
     - target: {fileID: 5556248050365689358, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_textInfo.spaceCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556248050067920125, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5556248050569662412, guid: 8260701c536ee2c4aa792ed586928fb9,
@@ -26852,23 +26920,33 @@ PrefabInstance:
     - target: {fileID: 5556248050365689360, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 4467
       objectReference: {fileID: 0}
     - target: {fileID: 5556248050365689360, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 997.8
       objectReference: {fileID: 0}
-    - target: {fileID: 5556248050067920125, guid: 8260701c536ee2c4aa792ed586928fb9,
+    - target: {fileID: 5556248050365689360, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_AnchoredPosition.x
+      value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 5556248050830150305, guid: 8260701c536ee2c4aa792ed586928fb9,
+    - target: {fileID: 5556248050365689360, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
-      propertyPath: PlayerRR
-      value: 
-      objectReference: {fileID: 9215048835449869251}
+      propertyPath: m_AnchoredPosition.y
+      value: 178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556248050365689360, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556248050365689360, guid: 8260701c536ee2c4aa792ed586928fb9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5556248048923161384, guid: 8260701c536ee2c4aa792ed586928fb9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -27206,7 +27284,7 @@ PrefabInstance:
         type: 3}
       propertyPath: walkEffect
       value: 
-      objectReference: {fileID: 2029453515}
+      objectReference: {fileID: 2029453518}
     - target: {fileID: 7707831096246041072, guid: 784334169e25268499ebeda7bec61e92,
         type: 3}
       propertyPath: m_LocalPosition.y

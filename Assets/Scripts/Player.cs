@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
     //private bool isGrounded; //Checking if the player is in the air
 
     public GameObject vineHitEffect; //Vine Particle Effect
-    public GameObject walkEffect; //Walking particle effect
+    public ParticleSystem walkEffect; //Walking particle effect
 
     // Heart Health System
     public int numOfHearts;
@@ -99,6 +99,7 @@ public class Player : MonoBehaviour
         legLength = transform.position.y - feet.position.y;
         respawnPoint = this.gameObject.transform.position;
         //mCol = GetComponent<Collider>();
+
     }
 
     void Update()
@@ -154,6 +155,15 @@ public class Player : MonoBehaviour
         {
             //Debug.Log("Im grounded");
             horizontal = Input.GetAxis("Horizontal") * runSpeed;
+            var em = walkEffect.emission;
+            if (horizontal == 0)
+            {
+                em.enabled = false;
+            }
+            else if (Mathf.Abs(horizontal) > 0.1f) //Abs is you want to turn a negative value into a positive, doesn't effect other variables
+            {
+                em.enabled = true;
+            }
             //Instantiate(walkEffect, transform.position, Quaternion.identity);
         }
         else
