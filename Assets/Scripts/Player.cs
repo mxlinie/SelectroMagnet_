@@ -229,12 +229,12 @@ public class Player : MonoBehaviour
         if (facingRight)
         {
             facingRight = false;
-            transform.eulerAngles = new Vector3(0, -180, 0);
+            transform.eulerAngles = new Vector3(0, -270, 0);
         }
         else
         {
             facingRight = true;
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, -90, 0);
         }
     }
 
