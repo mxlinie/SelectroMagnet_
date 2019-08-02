@@ -13,6 +13,7 @@ TagManager:
   - Vines
   - Ground
   - Platform
+  - Statue
   layers:
   - Default
   - TransparentFX

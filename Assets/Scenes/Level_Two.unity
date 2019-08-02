@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3528418, g: 0.5736464, b: 0.8686645, a: 1}
+  m_IndirectSpecularColor: {r: 0.3529284, g: 0.5736776, b: 0.8686604, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1487,64 +1487,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.37, y: 1, z: 3.27}
   m_Center: {x: 0, y: 1.25, z: 0}
---- !u!1 &412275895
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 412275896}
-  - component: {fileID: 412275898}
-  - component: {fileID: 412275897}
-  m_Layer: 0
-  m_Name: Platform Check
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &412275896
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412275895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 725761758}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &412275897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412275895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7f99a50fec8b644b2f1a36eb811309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 2092741568}
---- !u!65 &412275898
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412275895}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25, z: 0.25}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &413178333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,12 +2973,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.37, y: 1, z: 3.27}
   m_Center: {x: 0, y: 0.95, z: 0}
---- !u!4 &725761758 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1519359716665350561, guid: 784334169e25268499ebeda7bec61e92,
-    type: 3}
-  m_PrefabInstance: {fileID: 1388341080}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &744002276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5314,11 +5250,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1519359716665350621, guid: 784334169e25268499ebeda7bec61e92,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1519359716665350561, guid: 784334169e25268499ebeda7bec61e92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5399,36 +5330,6 @@ PrefabInstance:
       propertyPath: hearts.Array.data[4]
       value: 
       objectReference: {fileID: 87497543}
-    - target: {fileID: 1519359716665350563, guid: 784334169e25268499ebeda7bec61e92,
-        type: 3}
-      propertyPath: runSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519359716665350563, guid: 784334169e25268499ebeda7bec61e92,
-        type: 3}
-      propertyPath: jumpSpeed
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519359716665350563, guid: 784334169e25268499ebeda7bec61e92,
-        type: 3}
-      propertyPath: rayCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519359716665350563, guid: 784334169e25268499ebeda7bec61e92,
-        type: 3}
-      propertyPath: rayOffset.x
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 7707831096399551068, guid: 784334169e25268499ebeda7bec61e92,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519359716894284039, guid: 784334169e25268499ebeda7bec61e92,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784334169e25268499ebeda7bec61e92, type: 3}
 --- !u!1001 &1403253814
