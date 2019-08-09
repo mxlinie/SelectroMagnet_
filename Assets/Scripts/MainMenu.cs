@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     public void LevelSelect(string levelName)
     {
         SceneManager.LoadScene(levelName);
-        
+        Time.timeScale = 1.0f;
     }
 
     public void Resume()
