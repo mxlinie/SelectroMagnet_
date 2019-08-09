@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-    
+    public Animator walkCycle;
 
     #region Variables
     //private Rigidbody myRigidbody;
@@ -99,6 +99,7 @@ public class Player : MonoBehaviour
         legLength = transform.position.y - feet.position.y;
         respawnPoint = this.gameObject.transform.position;
         //mCol = GetComponent<Collider>();
+        walkCycle = gameObject.GetComponent<Animator>();
 
     }
 
@@ -158,12 +159,23 @@ public class Player : MonoBehaviour
             //Debug.Log("Im grounded");
             horizontal = Input.GetAxis("Horizontal") * runSpeed;
             var em = walkEffect.emission;
+            
             if (horizontal == 0)
             {
+                if (grounded)
+                {
+                    walkCycle.SetTrigger("StartIdle");
+                    walkCycle.ResetTrigger("StartRun");
+                }
                 em.enabled = false;
             }
             else if (Mathf.Abs(horizontal) > 0.1f) //Abs is you want to turn a negative value into a positive, doesn't effect other variables
             {
+                if (grounded)
+                {
+                    walkCycle.SetTrigger("StartRun");
+                    walkCycle.ResetTrigger("StartIdle");
+                }
                 em.enabled = true;
             }
             //Instantiate(walkEffect, transform.position, Quaternion.identity);
@@ -179,7 +191,9 @@ public class Player : MonoBehaviour
             //Debug.Log("Hit Key");
             rb.velocity = new Vector3(rb.velocity.x, 0, 0); //if we land on the edge of a platform sometimes we'll slip off.
             rb.AddForce(0, 100 * jumpSpeed, 0);
-
+            walkCycle.SetTrigger("StartJump");
+            walkCycle.ResetTrigger("StartRun");
+            walkCycle.ResetTrigger("StartIdle");
         }
 
         if (horizontal < -0.1f)
