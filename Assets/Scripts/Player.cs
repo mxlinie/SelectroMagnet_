@@ -140,6 +140,7 @@ public class Player : MonoBehaviour
         {
             grounded = false;
             em.enabled = false; //Character walk particle doesn't play when not grounded
+            walkCycle.ResetTrigger("StartRun");
         }
 
         #region Simple 1 Ray
