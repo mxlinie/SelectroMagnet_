@@ -358,10 +358,10 @@ public class Player : MonoBehaviour
         //groundedScript.grounded = false;
         //jump = false;
         losePanel.SetActive(false);
-        health = 3; //Calling public variables directly to change to 3 health with 3 hearts
         numOfHearts = 3;
+        health = 3; //Calling public variables directly to change to 3 health with 3 hearts
         HeartSystem(); //Allows the public variables above to work by calling the HeartSystem fuction
-        StartCoroutine(ResetCollider());
+        //StartCoroutine(ResetCollider());
     }
 
     IEnumerator ResetCollider()
