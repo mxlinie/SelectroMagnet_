@@ -119,6 +119,7 @@ public class Player : MonoBehaviour
         int layerMask = 1 << 9;
         Vector3 rayPoint = transform.position - ((rayCount / 2) * rayOffset);
         int gCount = 0;
+        var em = walkEffect.emission;
 
         for (int i = 0; i < rayCount; i++)
         {
@@ -137,6 +138,7 @@ public class Player : MonoBehaviour
         else
         {
             grounded = false;
+            em.enabled = false; //Character walk particle doesn't play when not grounded
         }
 
         #region Simple 1 Ray
@@ -169,6 +171,7 @@ public class Player : MonoBehaviour
         else
         {
             horizontal = Mathf.Lerp(rb.velocity.x, Input.GetAxis("Horizontal") * runSpeed, Time.deltaTime * 17.5f); //make horizontal movement less responsive when jumping/falling
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
