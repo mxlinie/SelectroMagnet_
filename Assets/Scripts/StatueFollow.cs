@@ -11,7 +11,7 @@ public class StatueFollow : MonoBehaviour
         // Rotate the camera every frame so it keeps looking at the target
         //transform.LookAt(target);
 
-        Vector3 targetPostition = new Vector3(target.position.x,this.transform.position.y,target.position.z);
-        this.transform.LookAt(target);
+        Vector3 targetPosition = new Vector3(target.position.x,this.transform.position.y,target.position.z);
+        this.transform.LookAt(targetPosition, transform.up);
     }
 }
