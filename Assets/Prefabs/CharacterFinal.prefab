@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bee419f2cc98b14bba77e8fc8a08819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkCycle: {fileID: 0}
+  walkCycle: {fileID: 925476790170634812}
   player: {fileID: 925476790161127934}
   runSpeed: 6
   jumpSpeed: 3.5
@@ -6303,7 +6303,7 @@ MonoBehaviour:
   firePoint: {fileID: 7399521524724928182}
   leftMouseClick: {fileID: 8300000, guid: eeb0fe1e5da36624c97e08b63461bd34, type: 3}
   rightMouseClick: {fileID: 8300000, guid: eeb0fe1e5da36624c97e08b63461bd34, type: 3}
-  magnetSuccess: {fileID: 8300000, guid: c4a7b2a462335c1458fe588dd006e2b0, type: 3}
+  magnetSuccess: {fileID: 8300000, guid: a13f7952f25a014498eda460850b8b8a, type: 3}
 --- !u!1 &7399521524724928182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,6 +6570,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7399521525278930844}
     m_Modifications:
+    - target: {fileID: 100022, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
+      propertyPath: m_Name
+      value: SelMag 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8515754
@@ -6626,10 +6630,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9577183
       objectReference: {fileID: 0}
-    - target: {fileID: 100022, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
-      propertyPath: m_Name
-      value: SelMag 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 2300016, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0e323dadb90efa479aa64813fade8c0, type: 2}
+    - target: {fileID: 2300018, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b38450efb03418e47bbdc9ba490f7979, type: 2}
+    - target: {fileID: 2300020, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b38450efb03418e47bbdc9ba490f7979, type: 2}
     - target: {fileID: 2300000, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -6662,18 +6674,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 509a16c13682532478adda1475bdd6f6, type: 2}
-    - target: {fileID: 2300016, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b0e323dadb90efa479aa64813fade8c0, type: 2}
-    - target: {fileID: 2300018, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b38450efb03418e47bbdc9ba490f7979, type: 2}
-    - target: {fileID: 2300020, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b38450efb03418e47bbdc9ba490f7979, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 434c2c5da991fdb4db8845398ac7a4fd, type: 3}
 --- !u!4 &7399521524620437680 stripped
