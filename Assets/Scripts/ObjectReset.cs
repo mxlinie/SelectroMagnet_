@@ -40,6 +40,7 @@ public class ObjectReset : MonoBehaviour
         
         foreach (GameObject polPlat in platforms)
         {
+            polPlat.transform.parent = null;
             Debug.Log("Index "+i+" Current pos = "+polPlat.transform.position+" -- Target pos = " + orgPos[i]);
             polPlat.transform.position = orgPos[i];
             polPlat.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255);

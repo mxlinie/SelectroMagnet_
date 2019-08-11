@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 706259356}
   - component: {fileID: 706259355}
   - component: {fileID: 706259357}
+  - component: {fileID: 531032726}
   m_Layer: 0
   m_Name: LeftArm
   m_TagString: Untagged
@@ -186,11 +187,26 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706259353}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06329687, y: 0.07661086, z: 0.06329687}
-  m_Center: {x: 0.000008448958, y: -0.008305439, z: 0.000008456409}
+  m_Size: {x: 0.04, y: 0.03, z: 0.02}
+  m_Center: {x: 0.000008448958, y: -0.03, z: 0.000008456409}
+--- !u!114 &531032726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706259353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fbb97ce0c20924ba5b81141202b052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vinePlayerDamage: 1
+  vine: {fileID: 0}
+  VhitPlayer: {fileID: 0}
 --- !u!1 &791801759
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +533,7 @@ GameObject:
   - component: {fileID: 1786504205}
   - component: {fileID: 1786504204}
   - component: {fileID: 1786504206}
+  - component: {fileID: 2090055485}
   m_Layer: 0
   m_Name: RightArm
   m_TagString: Untagged
@@ -594,8 +611,23 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06329689, y: 0.07661087, z: 0.06329689}
-  m_Center: {x: 0.000008417296, y: -0.008305443, z: 0.000008417296}
+  m_Size: {x: -0.03, y: -0.04, z: 0.02}
+  m_Center: {x: 0.000008417296, y: -0.025, z: 0.000008417296}
+--- !u!114 &2090055485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786504202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fbb97ce0c20924ba5b81141202b052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vinePlayerDamage: 1
+  vine: {fileID: 0}
+  VhitPlayer: {fileID: 0}
 --- !u!1 &3851321020384713850
 GameObject:
   m_ObjectHideFlags: 0
