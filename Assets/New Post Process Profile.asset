@@ -20,19 +20,19 @@ MonoBehaviour:
   loFiShadeThreshold4: 0.062
   colorCrushEffect: 0
   colorCrushTexture: {fileID: 0}
-  outlineStyle: 0
+  outlineStyle: 2
   outlineEffect: 0
   outlineNormalSensitivity: 0.212
   outlineDepthSensitivity: 0.18
   outlineMinDistance: 1
   outlineMaxDistance: 2
-  sketchEffect: 0
+  sketchEffect: 1
   sketchMultiEffect: 0
   sketchAngles: 5
-  sketchSamples: 5
-  sketchSharpness: 0.766
-  sketchDetail: 0.8
-  sketchWeight: 0
+  sketchSamples: 2
+  sketchSharpness: 1
+  sketchDetail: 0.413
+  sketchWeight: 0.296
   canvasEffect: 1
   canvasTexture: {fileID: 2800000, guid: 073b3bf0635a34950bb1cc12c48c9aa1, type: 3}
   canvasWeight: 0.407
